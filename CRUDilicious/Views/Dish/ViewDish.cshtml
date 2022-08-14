@@ -1,0 +1,14 @@
+@model Dish
+
+<h1><label asp-for="Name"></label>: @Model.Name</h1>
+<h3><label asp-for="Chef"></label> @Model.Chef</h3>
+<h5><label asp-for="Tastiness"></label> @Model.Tastiness</h5>
+<h5><label asp-for="Calories"></label> @Model.Calories</h5>
+<p>@Model.Description</p>
+<small>@Model.CreatedAt</small>
+<small>Last updated: @Model.UpdatedAt</small>
+
+<form asp-controller="Dish"
+asp-action="Delete" asp-route-deletedDishId="@Model.DishId" method="POST">
+    <button>Delete</button>
+</form>

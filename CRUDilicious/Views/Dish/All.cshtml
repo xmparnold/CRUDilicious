@@ -1,0 +1,26 @@
+@model List<Dish>
+
+<h3>Welcome to CRUDilicious</h3>
+
+@{
+    Dish newDish = new Dish();
+}
+<partial name="_New" model="@newDish"></partial>
+
+@foreach (Dish dish in Model)
+{
+    <div class="card shadow rounded mx-auto w-75 mb-3">
+        <h4 class="card-title text-center bg-dark text-light py-2 rounded-top">
+            @dish.Name
+        </h4>
+
+        <div class="card-body">
+            <p class="card-text">@dish.Description</p>
+            <small class="text-muted">Submitted on: @dish.CreatedAt</small>
+        </div>
+
+        <a asp-action="ViewDish" asp-route-dishId="@dish.DishId">View Details</a>
+
+    </div>
+    
+}
