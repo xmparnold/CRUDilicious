@@ -25,17 +25,11 @@ public class DishController : Controller
     }
 
 
-    [HttpGet("/dishes/new")]
-    public IActionResult New()
-    {
-        return View("New");
-    }
-
     [HttpPost("/dishes/create")]
     public IActionResult Create(Dish newDish)
     {
         if (ModelState.IsValid == false) {
-            return New();
+            return All();
         }
 
         _context.Dishes.Add(newDish);

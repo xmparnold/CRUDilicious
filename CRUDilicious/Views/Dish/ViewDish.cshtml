@@ -9,6 +9,8 @@
 <small>Last updated: @Model.UpdatedAt</small>
 
 <form asp-controller="Dish"
-asp-action="Delete" asp-route-deletedDishId="@Model.DishId" method="POST">
+asp-action="Delete" asp-route-deleteDishId="@Model.DishId" method="POST">
     <button>Delete</button>
 </form>
+
+

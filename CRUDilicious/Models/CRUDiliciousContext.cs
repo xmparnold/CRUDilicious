@@ -13,5 +13,4 @@ public class CRUDiliciousContext : DbContext
 
     public DbSet<Dish> Dishes { get; set; }
     
-
 }
